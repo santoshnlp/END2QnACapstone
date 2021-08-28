@@ -51,4 +51,23 @@ Which model to use for document encoding?
 ------------------
 A  BERT Model. The CLS token of BERT model could be treated as question embedding/vector. We will be uing same pretrained BERT model as in document encoder. This time it is trained.
 
-  
+
+   
+Finding document with answer
+****************  
+We have a question vector. This vector could tell us which docments are relevant or similar to question.  so question vector should be sufficient in generating ranking of documents. But, if we follow this, it is going to be computationally expensive.  We have to generate similarity score for all the documents for a given question before ranking.
+
+
+Is there an alternative?
+------------------
+Yes,   FIASS -Facebook AI Similarity Search.
+
+This algorithm makes ranking computation much faster and less expensive.  So, we will be using this to find out top K matching documents.
+
+
+Answer generation
+****************  
+
+Once we have the top k documents,  we will concatenate the documents  found with the query (raw text) and then feed it to the BART encoder.
+The BART model is trained to give exact answer or semantically similar answer.
+
