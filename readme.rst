@@ -60,7 +60,7 @@ We have a question vector. This vector could tell us which docments are relevant
 
 Is there an alternative?
 ------------------
-Yes,   FIASS -Facebook AI Similarity Search.
+Yes,   FAISS -Facebook AI Similarity Search.
 
 This algorithm makes ranking computation much faster and less expensive.  So, we will be using this to find out top K matching documents.
 
